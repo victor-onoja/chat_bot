@@ -1,8 +1,9 @@
-import 'package:chst_bot/chat_widget.dart';
-import 'package:chst_bot/constants.dart';
+import 'package:ai_chat_bot/api_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_generative_ai/google_generative_ai.dart';
+
+import 'chat_widget.dart';
 
 class ChatPage extends StatefulWidget {
   const ChatPage({super.key});
@@ -20,7 +21,8 @@ class _ChatPageState extends State<ChatPage> {
 
   @override
   void initState() {
-    _generativeModel = GenerativeModel(model: "gemini-pro", apiKey: apiKey);
+    _generativeModel =
+        GenerativeModel(model: "gemini-1.5-flash", apiKey: ApiConfig.apiKey);
     _chatSession = _generativeModel.startChat();
     super.initState();
   }
@@ -47,7 +49,7 @@ class _ChatPageState extends State<ChatPage> {
     return Scaffold(
       appBar: AppBar(
         elevation: 2,
-        title: const Text("Chat Bot"),
+        title: const Text("Gemini AI Chat Bot"),
       ),
       body: Column(
         children: [
@@ -69,7 +71,7 @@ class _ChatPageState extends State<ChatPage> {
             height: 15,
           ),
           Container(
-            color: primaryColor,
+            color: Colors.purple,
             child: Padding(
               padding: const EdgeInsets.only(
                   left: 16.0, right: 16, top: 5, bottom: 20),

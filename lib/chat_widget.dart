@@ -1,5 +1,4 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:chst_bot/constants.dart';
 import 'package:flutter/material.dart';
 
 class ChatWidget extends StatelessWidget {
@@ -16,7 +15,7 @@ class ChatWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: _chat["isSender"] == true ? primaryColor : Colors.white,
+      color: _chat["isSender"] == true ? Colors.purple : Colors.white,
       child: Padding(
         padding: const EdgeInsets.all(16),
         child: Row(

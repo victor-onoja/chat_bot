@@ -1,4 +1,4 @@
-# chst_bot
+# ai_chat_bot
 
 A new Flutter project.
 
